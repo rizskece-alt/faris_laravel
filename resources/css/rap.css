@@ -1,0 +1,340 @@
+/* wep.css - Tema Biru Laut dengan Emoji (Sederhana & Menarik) */
+
+:root {
+    --sea-blue: #1a6baf;
+    --sea-blue-light: #4d8bc8;
+    --sea-blue-dark: #0d4a7a;
+    --ocean-teal: #2a9d8f;
+    --wave-blue: #8ecae6;
+    --light-bg: #f0f8ff;
+    --white: #ffffff;
+    --shadow: rgba(26, 107, 175, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--light-bg);
+    color: var(--sea-blue-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* Subtle waves effect */
+body::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231a6baf" opacity="0.1"/></svg>');
+    background-size: 1200px 100px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.container {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--shadow);
+    padding: 2rem;
+    margin: 2rem auto;
+    border: 1px solid rgba(142, 202, 230, 0.3);
+    max-width: 600px;
+    position: relative;
+}
+
+/* Top border accent */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--sea-blue), 
+        var(--ocean-teal), 
+        var(--wave-blue));
+}
+
+/* Header dengan emoji */
+h3 {
+    color: var(--sea-blue-dark);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--wave-blue);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.8rem;
+}
+
+h3::before {
+    content: '📝';
+    font-size: 1.8rem;
+}
+
+/* Form styling */
+form {
+    padding: 1rem 0;
+}
+
+/* Form groups dengan emoji */
+.mb-3 {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.mb-3 label {
+    color: var(--sea-blue-dark);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+/* Emoji untuk label */
+.mb-3:nth-child(1) label::before {
+    content: '📚';
+    font-size: 1.2rem;
+}
+
+.mb-3:nth-child(2) label::before {
+    content: '🎓';
+    font-size: 1.2rem;
+}
+
+.mb-3:nth-child(3) label::before {
+    content: '👤';
+    font-size: 1.2rem;
+}
+
+.mb-3:nth-child(4) label::before {
+    content: '📞';
+    font-size: 1.2rem;
+}
+
+/* Input fields */
+.form-control {
+    border: 2px solid #e1f0ff;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fbff;
+    color: var(--sea-blue-dark);
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: var(--sea-blue);
+    box-shadow: 0 0 0 3px rgba(26, 107, 175, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #a0c8e8;
+}
+
+/* Button container */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(142, 202, 230, 0.5);
+}
+
+/* Buttons dengan emoji */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    flex: 1;
+    min-width: 120px;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--ocean-teal), #2a9d8f);
+    color: white;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.2);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(42, 157, 143, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* Emoji untuk tombol simpan */
+.btn-success::before {
+    content: '💾';
+    font-size: 1.1rem;
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: var(--sea-blue-dark);
+    border: 2px solid var(--wave-blue);
+    box-shadow: 0 4px 12px rgba(142, 202, 230, 0.2);
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--sea-blue);
+    border-color: var(--sea-blue-light);
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(142, 202, 230, 0.3);
+}
+
+/* Emoji untuk tombol kembali */
+.btn-secondary::before {
+    content: '←';
+    font-size: 1.1rem;
+}
+
+/* Alert messages dengan emoji */
+.alert {
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-success {
+    background: rgba(169, 223, 191, 0.2);
+    color: #155724;
+    border-left: 4px solid var(--ocean-teal);
+}
+
+.alert-success::before {
+    content: '✅';
+    font-size: 1.2rem;
+}
+
+.alert-danger {
+    background: rgba(231, 76, 60, 0.1);
+    color: #721c24;
+    border-left: 4px solid #e74c3c;
+}
+
+.alert-danger::before {
+    content: '⚠️';
+    font-size: 1.2rem;
+}
+
+/* Required field indicator */
+.form-control:required + label::after {
+    content: ' *';
+    color: #e74c3c;
+}
+
+/* Validation states */
+.form-control.is-invalid {
+    border-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.invalid-feedback {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.invalid-feedback::before {
+    content: '❌';
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 1.5rem;
+        margin: 1rem auto;
+        border-radius: 10px;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .form-control {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.2rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .mb-3 label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/* Subtle fade-in animation */
+.container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

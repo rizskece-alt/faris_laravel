@@ -1,0 +1,253 @@
+/* wep.css - Tema Biru Laut (Sederhana & Elegan) */
+
+:root {
+    --sea-blue: #1a6baf;
+    --sea-blue-light: #4d8bc8;
+    --sea-blue-dark: #0d4a7a;
+    --ocean-teal: #2a9d8f;
+    --wave-blue: #8ecae6;
+    --light-bg: #f0f8ff;
+    --white: #ffffff;
+    --shadow: rgba(26, 107, 175, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--light-bg);
+    color: var(--sea-blue-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* Background waves subtle */
+body::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231a6baf" opacity="0.1"/></svg>');
+    background-size: 1200px 100px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.container {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--shadow);
+    padding: 2rem;
+    margin: 2rem auto;
+    border: 1px solid rgba(142, 202, 230, 0.3);
+    max-width: 600px;
+    position: relative;
+}
+
+/* Header styling */
+h3 {
+    color: var(--sea-blue-dark);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--wave-blue);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h3 i {
+    color: var(--sea-blue);
+    font-size: 1.8rem;
+}
+
+/* Form styling */
+form {
+    padding: 1rem 0;
+}
+
+.form-label {
+    color: var(--sea-blue-dark);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.form-label i {
+    color: var(--sea-blue);
+    width: 20px;
+}
+
+.form-control {
+    border: 2px solid #e1f0ff;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fbff;
+    color: var(--sea-blue-dark);
+}
+
+.form-control:focus {
+    border-color: var(--sea-blue);
+    box-shadow: 0 0 0 3px rgba(26, 107, 175, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #a0c8e8;
+}
+
+/* Select styling */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231a6baf' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+}
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(135deg, var(--sea-blue), var(--ocean-teal));
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(26, 107, 175, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(26, 107, 175, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* Form groups */
+.mb-3 {
+    margin-bottom: 1.2rem;
+}
+
+/* Alert messages */
+.alert {
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.alert-success {
+    background: rgba(169, 223, 191, 0.2);
+    color: #155724;
+    border-left: 4px solid var(--ocean-teal);
+}
+
+.alert-danger {
+    background: rgba(231, 76, 60, 0.1);
+    color: #721c24;
+    border-left: 4px solid #e74c3c;
+}
+
+/* Back link */
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--sea-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--sea-blue-dark);
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 1.5rem;
+        margin: 1rem auto;
+        border-radius: 10px;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .form-control {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.2rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    h3 i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+/* Validation states */
+.form-control.is-invalid {
+    border-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.form-control.is-valid {
+    border-color: var(--ocean-teal);
+    background-color: rgba(42, 157, 143, 0.05);
+}
+
+.invalid-feedback {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}

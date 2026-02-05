@@ -1,0 +1,341 @@
+/* resources/css/edit.css */
+
+/* Reset dan variabel warna tema biru laut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sea-blue: #1a6baf;
+    --sea-blue-light: #4d8bc8;
+    --sea-blue-dark: #0d4a7a;
+    --ocean-teal: #2a9d8f;
+    --wave-blue: #8ecae6;
+    --sand: #f4e9cd;
+    --white: #ffffff;
+    --light-bg: #f0f8ff;
+    --shadow: rgba(26, 107, 175, 0.15);
+    --gradient-sea: linear-gradient(135deg, #1a6baf 0%, #2a9d8f 100%);
+}
+
+/* Body dengan efek latar belakang biru laut yang halus */
+body.edit-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #e6f7ff 0%, #c2e6ff 100%);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background waves animasi */
+body.edit-page::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231a6baf" opacity="0.1"/></svg>');
+    background-size: 1200px 100px;
+    animation: animateWave 30s linear infinite;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+body.edit-page::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231a6baf" opacity="0.05"/></svg>');
+    background-size: 1200px 100px;
+    animation: animateWave2 20s linear infinite;
+    z-index: -2;
+    opacity: 0.1;
+    animation-delay: -5s;
+}
+
+@keyframes animateWave {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1200px; }
+}
+
+@keyframes animateWave2 {
+    0% { background-position-x: 0; }
+    100% { background-position-x: -1200px; }
+}
+
+/* Container utama */
+.container.edit-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header form */
+.edit-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--sea-blue-dark);
+}
+
+.edit-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.edit-header .header-icon {
+    font-size: 2.2rem;
+    color: var(--sea-blue);
+    background: rgba(26, 107, 175, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--wave-blue);
+}
+
+.edit-header p {
+    color: var(--sea-blue-light);
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Card form */
+.form-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px var(--shadow);
+    border: 1px solid rgba(142, 202, 230, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek dekoratif atas card */
+.form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-sea);
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--sea-blue-dark);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-label i {
+    margin-right: 8px;
+    color: var(--sea-blue);
+    width: 20px;
+    text-align: center;
+}
+
+/* Input field styling */
+.form-control {
+    border: 2px solid #e1f0ff;
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8fbff;
+    color: var(--sea-blue-dark);
+}
+
+.form-control:focus {
+    border-color: var(--sea-blue);
+    box-shadow: 0 0 0 3px rgba(26, 107, 175, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #a0c8e8;
+}
+
+/* Select field styling */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231a6baf' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+}
+
+/* Button styling */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(142, 202, 230, 0.5);
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    min-width: 140px;
+}
+
+.btn-primary {
+    background: var(--gradient-sea);
+    color: white;
+    box-shadow: 0 4px 15px rgba(26, 107, 175, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(26, 107, 175, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: var(--sea-blue-dark);
+    border: 2px solid var(--wave-blue);
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--sea-blue);
+    border-color: var(--sea-blue-light);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Required field indicator */
+.form-label.required::after {
+    content: ' *';
+    color: #e74c3c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body.edit-page {
+        padding: 15px;
+    }
+    
+    .container.edit-container {
+        max-width: 95%;
+        margin: 1rem auto;
+    }
+    
+    .form-card {
+        padding: 1.8rem;
+    }
+    
+    .edit-header h3 {
+        font-size: 1.7rem;
+    }
+    
+    .edit-header .header-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-card {
+        padding: 1.5rem;
+    }
+    
+    .edit-header h3 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-control {
+        padding: 0.8rem;
+    }
+}
+
+/* Validation states */
+.form-control.is-valid {
+    border-color: #28a745;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Back to list link */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--sea-blue-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--sea-blue);
+    text-decoration: none;
+}
