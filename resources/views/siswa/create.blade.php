@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Tambah Siswa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-      @vite(['resources/css/create.css', 'resources/js/app.js'])
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
